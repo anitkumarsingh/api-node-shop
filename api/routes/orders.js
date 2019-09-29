@@ -9,7 +9,12 @@ router.post('/',(req,res,next)=>{
         message:'Post request to order'
     })
 })
-
+router.get('/:orderId',(req,res,next)=>{
+    res.status(200).json({
+        message:'Order details is here....',
+        id:req.params.orderId
+    })
+})
 router.delete('/:orderId',(req,res,next)=>{
     res.status(200).json({
         message:'Order deleted successfuly!'
