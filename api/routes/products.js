@@ -8,8 +8,14 @@ router.get('/',(req,res,next)=>{
 })
 
 router.post('/',(req,res,next)=>{
+    const products = {
+        name:req.body.name,
+        quantity:req.body.quantity,
+        price:req.body.price
+    }
     res.status(201).json({
-        message:'Post request to Product resource'
+        message:'Product created successfully!',
+        products:products
     })
 })
 
